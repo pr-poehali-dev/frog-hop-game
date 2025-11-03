@@ -68,6 +68,9 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			fontFamily: {
+				rubik: ['Rubik', 'sans-serif'],
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -84,11 +87,31 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				'hop': {
+					'0%, 100%': { transform: 'translateY(0) scale(1)' },
+					'50%': { transform: 'translateY(-30px) scale(1.1)' },
+				},
+				'sink': {
+					'0%': { transform: 'scale(1)', opacity: '1' },
+					'100%': { transform: 'scale(0.3)', opacity: '0' },
+				},
+				'fly-collect': {
+					'0%': { transform: 'translate(0, 0) scale(1)', opacity: '1' },
+					'100%': { transform: 'translate(-50px, -80px) scale(0)', opacity: '0' },
+				},
+				'ripple': {
+					'0%': { transform: 'scale(1)', opacity: '0.6' },
+					'100%': { transform: 'scale(2.5)', opacity: '0' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'hop': 'hop 0.6s ease-in-out',
+				'sink': 'sink 0.4s ease-out forwards',
+				'fly-collect': 'fly-collect 0.5s ease-in forwards',
+				'ripple': 'ripple 0.6s ease-out',
 			}
 		}
 	},
